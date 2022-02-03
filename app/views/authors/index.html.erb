@@ -1,0 +1,27 @@
+<%= link_to "New author", new_author_path , class: "btn btn-primary"%>
+<br><h1><center>Authors</center></h1>
+
+
+<div id="authors">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Facebook</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @authors.each do |author| %>
+          <% if author.user == current_user%>
+            <%= render author %>
+          <% end %>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+

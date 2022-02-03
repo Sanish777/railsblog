@@ -1,0 +1,25 @@
+
+<div id="<%= dom_id author %>">
+
+  <tr>
+      <td><%= author.first_name%></td>
+      <td><%= author.last_name%></td>
+      <td><%= author.email%></td>
+      <td><%= author.phone%></td>
+      <td><%= author.facebook %></td>
+      <td><%= author.user_id %></td>
+      <td>
+      <% if(author.cover_image.attached?)%>
+        <%= image_tag(author.cover_image, width: "100") %>
+        </td>
+      <td>
+        <%= link_to "Show", author %>
+        <% if(author.user == current_user)%>
+          <%= link_to "Edit", edit_author_path(author) %>
+        <% end %>
+        <%= button_to "Delete", author, method: :delete , data: { confirm: 'Are you Sure?'}, class: "btn btn-danger"%>
+      </td>
+  </tr>
+ </div>
+
+

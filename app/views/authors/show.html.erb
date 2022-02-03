@@ -1,0 +1,11 @@
+<div class="jumbotron" id="<%= dom_id @author %>">
+  <h1 class="display-4"><%= @author.first_name%> <%=@author.last_name %></h1>
+  <p class="lead"><%= @author.email %></p>
+  <hr class="my-4">
+  <p>Phone Number: <%= @author.phone %></p>
+  <p><i class="fab fa-facebook"></i> <%= @author.facebook %></p>
+  <br/>
+  <%= link_to "Edit this author", edit_author_path(@author), class: 'btn btn-default' %> |
+  <%= link_to "Back to authors", authors_path, class: 'btn btn-default' %>
+  <%= button_to "Destroy this author", @author, method: :delete, class: 'btn btn-warning' %>
+</div>
